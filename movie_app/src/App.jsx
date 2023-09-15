@@ -1,12 +1,8 @@
 import Footer from "./Footer"
 import MovieList from "./MovieList"
 import Header from "./Header"
-import Data from "./data"
 import Axios from 'axios'
 import { useState, useEffect } from "react"
-import MenuPage from "./MenuPage"
-import MovieDetails from "./MovieDetails"
-import RoutePages from "./RoutePages"
 
 
 
