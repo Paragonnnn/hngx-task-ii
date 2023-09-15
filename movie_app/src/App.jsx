@@ -13,14 +13,16 @@ import RoutePages from "./RoutePages"
 function App() {
   const [data, setData] = useState([])
   const [toggle, setToggle] = useState(false)
+  const [loading, setLoading] = useState(null)
 
   const handleToggle = () => {
     setToggle(prev => !prev)
   }
+  const api_key = import.meta.env.VITE_api_key
   useEffect(() => {
-    Axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=ffbc2497269ce0f341542a9ec7df5486').then((res) => {
+    Axios.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=${api_key}`).then((res) => {
       // console.log(res.data.results);
-      setData(res.data.results)
+      setData((res.data.results).slice(0,10))
       console.log(data);
     })
 
@@ -43,7 +45,7 @@ console.log(data);
       <Header backdrop={data.backdrop_path} handleToggle={handleToggle} toggle={toggle}/>
       <MovieList title={data.title} date={data.release_date} data={data}/>
       <Footer />
-      {toggle && <MenuPage />}
+      {/* {toggle && <MenuPage />} */}
       {/* <RoutePages data={data}/> */}
       {/* <MovieDetails data={data}/> */}
     </div>

@@ -227,7 +227,7 @@
     border: 1px solid rgba(0, 0, 0, 0.30);
     border-radius: 0px 45px 45px 0px;
     background: #FFF;
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     /* animation: menu 1s; */
     transition: 1s;
@@ -345,5 +345,95 @@
 }
 
 @media (max) {
+    
+}
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.movie_details{
+    width: 1440px;
+    /* margin: auto; */
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+}
+.movie_details_menu{
+    position: static;
+}
+.movie_details_2{
+    /* position: absolute; */
+    /* right: 0; */
+    /* outline: solid 1px red; */
+    /* margin-top: 20px; */
+    width: 1198px;
+    
+}
+.movie_details_img{
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    
+    /* outline: solid 1px red; */
+    margin-bottom: 20px;
+}
+.movie_details_img>img{
+    /* height: 100%; */
+    width: 100%;
+
+    /* overflow: hidden; */
+    /* border-radius: 20px; */
+    
+}
+.movie_details_data{
+    padding: 10px;
+}
+.data_title{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 20px;
+    font-size: 23px;
+    font-weight: 500;
+    color: #404040;
+    margin-bottom: 20px;
+}
+.genre_list{
+    display: flex;
+    gap: 15px;
+}
+.genre{
+    font-size: 15px;
+    font-weight: 500;
+    color: #B91C1C;
+    height: 30px;
+    width: fit-content;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 3px 17px;
+    border: solid 1px #F8E7EB;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.movie_details_overview{
+    color: #333;
+    font-size: 20px;
+    width: 774px;
+    font-weight: 400;
     
 }
