@@ -17,10 +17,11 @@ const MovieDetails = ({}) => {
   //     console.log(datas);
     
   // }
+  const api_key = import.meta.env.VITE_api_key
   useEffect(() => {
     async function getData() {
       setLoading(true)
-      await Axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=ffbc2497269ce0f341542a9ec7df5486`).then((res) => {
+      await Axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`).then((res) => {
       // console.log(res.data.results);
       setDatas(res.data)
       setLoading(false)
@@ -51,7 +52,10 @@ const MovieDetails = ({}) => {
                 |
                 <span data-testid='movie-release-date'>{datas.release_date} </span>
                 |
-                <span data-testid='movie-runtime'>{datas.runtime}m</span>
+                <div>
+                  <span data-testid='movie-runtime'>{datas.runtime}</span>m
+                </div>
+                
                 <div className='genre_list'>
                   {
                     (datas.genres).map((genre => (
